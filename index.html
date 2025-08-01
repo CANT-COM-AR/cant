@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CANT – Centro Argentino de Neurodesarrollo y Tecnologías</title>
+    <meta name="description"
+        content="Soporte y validación tecnológica para diagnóstico, tratamiento y seguimiento de TND. Implementación en instituciones, formación y soporte continuo. 100% online." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0e1116;
+            --card: #151a23;
+            --ink: #e9eef5;
+            --muted: #a7b0bd;
+            --accent: #2fd4c5;
+            /* turquesa */
+            --accent-ink: #063b37;
+            --max: 1160px;
+            --radius: 16px;
+            --gap: 20px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: Roboto, system-ui, -apple-system, Segoe UI, Arial, sans-serif
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: Poppins, Roboto, Arial, sans-serif;
+            margin: 0 0 8px
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px
+        }
+
+        .wrap {
+            max-width: var(--max);
+            margin: auto;
+            padding: 0 16px
+        }
+
+        /* Header / Nav */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(14, 17, 22, .9);
+            backdrop-filter: saturate(1.2) blur(8px);
+            z-index: 10;
+            border-bottom: 1px solid #1f2631
+        }
+
+        .bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), #79ffe1);
+            box-shadow: 0 0 0 3px var(--accent-ink) inset
+        }
+
+        .brand h1 {
+            font-size: 18px;
+            line-height: 1.1
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 16px;
+            margin: 0;
+            padding: 0
+        }
+
+        nav a {
+            display: block;
+            padding: 8px 10px;
+            border-radius: 10px
+        }
+
+        nav a[aria-current="page"] {
+            background: var(--card);
+            text-decoration: none
+        }
+
+        .cta {
+            display: inline-block;
+            background: var(--accent);
+            color: #01211f;
+            border-radius: 12px;
+            padding: 10px 14px;
+            font-weight: 600
+        }
+
+        .cta:hover {
+            text-decoration: none;
+            filter: brightness(1.05)
+        }
+
+        /* Layout: main + aside */
+        main {
+            padding: 28px 0
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--gap)
+        }
+
+        @media (min-width: 960px) {
+            .grid {
+                grid-template-columns: 3fr 1.2fr
+            }
+        }
+
+        section {
+            background: var(--card);
+            border: 1px solid #1f2631;
+            border-radius: var(--radius);
+            padding: 20px
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(180deg, #131924, #10151e);
+            border: 1px solid #1f2631
+        }
+
+        .hero h2 {
+            font-size: clamp(26px, 3vw, 36px)
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 60ch
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1px solid #223042
+        }
+
+        .btn.primary {
+            background: var(--accent);
+            color: #001b18;
+            border-color: transparent;
+            font-weight: 700
+        }
+
+        .btn.ghost {
+            background: transparent;
+            color: var(--ink)
+        }
+
+        /* Cards / grids */
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--gap)
+        }
+
+        @media (min-width:720px) {
+            .cards {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+
+        .card {
+            background: #11161f;
+            border: 1px solid #1f2631;
+            border-radius: 14px;
+            padding: 16px
+        }
+
+        .kicker {
+            color: var(--accent);
+            font-size: .85rem;
+            letter-spacing: .02em;
+            margin-bottom: 4px
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .list {
+            display: grid;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .list li {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start
+        }
+
+        .badge {
+            display: inline-block;
+            background: #0c141d;
+            border: 1px solid #263341;
+            color: var(--muted);
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: .8rem
+        }
+
+        /* Articles */
+        article+article {
+            margin-top: 16px
+        }
+
+        article header h3 {
+            margin-bottom: 4px
+        }
+
+        /* Aside */
+        aside .widget {
+            background: #0f141c;
+            border: 1px dashed #2a3647;
+            border-radius: 14px;
+            padding: 14px
+        }
+
+        aside .widget+.widget {
+            margin-top: 12px
+        }
+
+        .calendar {
+            display: grid;
+            gap: 8px
+        }
+
+        .calendar a {
+            display: block;
+            border: 1px solid #2c394c;
+            border-radius: 10px;
+            padding: 10px
+        }
+
+        .note {
+            font-size: .9rem;
+            color: var(--muted)
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #1f2631;
+            margin-top: 24px
+        }
+
+        .foot {
+            display: grid;
+            gap: 16px;
+            padding: 20px 0
+        }
+
+        @media (min-width:720px) {
+            .foot {
+                grid-template-columns: 2fr 1fr 1fr 1fr
+            }
+        }
+
+        .small {
+            font-size: .9rem;
+            color: var(--muted)
+        }
+
+        .foot h4 {
+            font-family: Poppins;
+            margin: 0 0 8px
+        }
+
+        /* Skip link */
+        .skip {
+            position: absolute;
+            left: -9999px
+        }
+
+        .skip:focus {
+            left: 16px;
+            top: 10px;
+            background: #fff;
+            color: #000;
+            padding: 8px;
+            border-radius: 6px
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+
+    <!-- HEADER / NAV -->
+    <header role="banner">
+        <div class="wrap bar">
+            <div class="brand">
+                <div class="logo" aria-hidden="true"></div>
+                <h1 aria-label="CANT Centro Argentino de Neurodesarrollo y Tecnologías">
+                    CANT <span class="small">· Centro Argentino de Neurodesarrollo y Tecnologías</span>
+                </h1>
+            </div>
+            <nav aria-label="Principal">
+                <ul>
+                    <li><a href="#" aria-current="page">Inicio</a></li>
+                    <li><a href="#areas">Áreas de acción</a></li>
+                    <li><a href="#alianzas">Alianzas</a></li>
+                    <li><a href="#formacion">Formación</a></li>
+                    <li><a href="#etica">Ética y Datos</a></li>
+                    <li><a href="#contacto" class="cta">Agendar reunión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN + ASIDE -->
+    <main id="contenido" class="wrap">
+        <div class="grid">
+
+            <!-- MAIN COLUMN -->
+            <div>
+                <!-- HERO -->
+                <section class="hero" aria-labelledby="hero-title">
+                    <h2 id="hero-title">Soporte y validación tecnológica para el abordaje de los TND</h2>
+                    <p>Promovemos, validamos e implementamos herramientas de diagnóstico, tratamiento y seguimiento en
+                        alianza con instituciones y startups AIoT. Operación 100% online. No brindamos atención clínica
+                        directa.</p>
+                    <div class="hero-actions">
+                        <a class="btn primary" href="#areas">Ver áreas de acción</a>
+                        <a class="btn ghost" href="#guia">Descargar guía de validación</a>
+                    </div>
+                </section>
+
+                <!-- PILARES -->
+                <section aria-labelledby="pilares-title">
+                    <h2 id="pilares-title">Nuestros pilares</h2>
+                    <div class="cards">
+                        <div class="card">
+                            <div class="kicker">Validación</div>
+                            <h3>Protocolos y métricas</h3>
+                            <p class="muted">Eficacia clínica y robustez técnica antes del despliegue.</p>
+                        </div>
+                        <div class="card">
+                            <div class="kicker">Implementación</div>
+                            <h3>Adopción guiada</h3>
+                            <p class="muted">Onboarding, KPIs y soporte en campo con aliados.</p>
+                        </div>
+                        <div class="card">
+                            <div class="kicker">Formación</div>
+                            <h3>Capacitación online</h3>
+                            <p class="muted">Cursos y talleres para equipos clínicos y técnicos.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- COMO TRABAJAMOS -->
+                <section aria-labelledby="flujo-title">
+                    <h2 id="flujo-title">Cómo trabajamos</h2>
+                    <ol class="list">
+                        <li><span class="badge">1</span> Diagnóstico: entendimiento clínico-tecnológico y contexto
+                            institucional.</li>
+                        <li><span class="badge">2</span> Plan: protocolo de validación y plan de implementación.</li>
+                        <li><span class="badge">3</span> Piloto: prueba controlada con métricas y ética de datos.</li>
+                        <li><span class="badge">4</span> Escalado: operación continua, monitoreo y formación.</li>
+                    </ol>
+                </section>
+
+                <!-- AREAS DE ACCION -->
+                <section id="areas" aria-labelledby="areas-title">
+                    <h2 id="areas-title">Áreas de acción</h2>
+
+                    <article aria-labelledby="a1">
+                        <header>
+                            <h3 id="a1">Promoción de proyectos</h3>
+                        </header>
+                        <p class="muted">Difusión y conexión con equipos de desarrollo y entornos clínicos.</p>
+                        <ul class="list">
+                            <li>Scouting de soluciones y necesidades.</li>
+                            <li>Vinculación con instituciones y expertos.</li>
+                        </ul>
+                        <p><a class="btn" href="#contacto">Presentar proyecto</a></p>
+                    </article>
+
+                    <article aria-labelledby="a2">
+                        <header>
+                            <h3 id="a2">Validación clínica y tecnológica</h3>
+                        </header>
+                        <p class="muted">Pruebas de eficacia, adecuación ética y cumplimientos regulatorios.</p>
+                        <ul class="list">
+                            <li>Diseño de protocolo y métricas.</li>
+                            <li>Reporte de resultados y recomendaciones.</li>
+                        </ul>
+                        <p><a class="btn" href="#contacto">Solicitar marco de validación</a></p>
+                    </article>
+
+                    <article aria-labelledby="a3">
+                        <header>
+                            <h3 id="a3">Implementación en instituciones</h3>
+                        </header>
+                        <p class="muted">Acompañamiento para adopción efectiva, indicadores y soporte.</p>
+                        <ul class="list">
+                            <li>Onboarding de equipos y flujo de trabajo.</li>
+                            <li>KPI, monitoreo y mejoras continuas.</li>
+                        </ul>
+                        <p><a class="btn" href="#contacto">Agendar reunión institucional</a></p>
+                    </article>
+
+                    <article id="formacion" aria-labelledby="a4">
+                        <header>
+                            <h3 id="a4">Formación</h3>
+                        </header>
+                        <p class="muted">Cursos, talleres y certificaciones en herramientas digitales para TND.</p>
+                        <ul class="list">
+                            <li>Ética y datos en salud digital.</li>
+                            <li>Integración clínica de IA/IoT.</li>
+                        </ul>
+                        <p><a class="btn" href="#contacto">Ver calendario</a></p>
+                    </article>
+
+                    <article aria-labelledby="a5">
+                        <header>
+                            <h3 id="a5">Soporte continuo</h3>
+                        </header>
+                        <p class="muted">Mesa de ayuda, auditorías y actualización de prácticas.</p>
+                        <ul class="list">
+                            <li>Seguimiento remoto 100% online.</li>
+                            <li>Documentación y guías vivas.</li>
+                        </ul>
+                        <p><a class="btn" href="#contacto">Contactar soporte</a></p>
+                    </article>
+                </section>
+
+                <!-- RECURSOS / LEAD MAGNET -->
+                <section id="guia" aria-labelledby="recursos-title">
+                    <h2 id="recursos-title">Recursos</h2>
+                    <div class="cards">
+                        <div class="card">
+                            <h3>Guía de validación en TND (PDF)</h3>
+                            <p class="muted">Checklist de privacidad, métricas clínicas, pilotos y escalado.</p>
+                            <a class="btn" href="#">Descargar</a>
+                        </div>
+                        <div class="card">
+                            <h3>Preguntas frecuentes</h3>
+                            <p class="muted">Cobertura, tiempos, entregables y criterios de calidad.</p>
+                            <a class="btn" href="#">Ver FAQs</a>
+                        </div>
+                        <div class="card">
+                            <h3>Artículos y casos</h3>
+                            <p class="muted">Buenas prácticas y lecciones aprendidas en adopción tecnológica.</p>
+                            <a class="btn" href="#">Explorar</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ASIDE (CTA + Agenda + Notas) -->
+            <aside aria-label="Panel lateral">
+                <div class="widget">
+                    <h3>Agendar reunión</h3>
+                    <p class="muted">Coordinemos una llamada para evaluar necesidades y próximos pasos.</p>
+                    <p><a class="btn primary" href="#contacto">Abrir agenda</a></p>
+                    <p class="note">Tiempo estimado: 30 min · Online</p>
+                </div>
+                <div class="widget">
+                    <h3>Contacto rápido</h3>
+                    <ul class="list">
+                        <li>✉️ <a href="mailto:contacto@cant.org">contacto@cant.org</a></li>
+                        <li>💬 <a href="#contacto">Formulario</a></li>
+                        <li>🔗 <a href="#" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="widget">
+                    <h3>Transparencia</h3>
+                    <p class="muted">Operamos 100% online y no brindamos atención clínica directa. Trabajamos con
+                        instituciones y equipos profesionales.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer role="contentinfo">
+        <div class="wrap foot">
+            <div>
+                <h4>CANT</h4>
+                <p class="small">Centro Argentino de Neurodesarrollo y Tecnologías. Hub online de soporte, validación,
+                    implementación, formación y soporte en TND.</p>
+            </div>
+            <div>
+                <h4>Mapa</h4>
+                <ul class="list">
+                    <li><a href="#areas">Áreas de acción</a></li>
+                    <li><a href="#alianzas">Alianzas</a></li>
+                    <li><a href="#formacion">Formación</a></li>
+                    <li><a href="#etica">Ética y Datos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Recursos</h4>
+                <ul class="list">
+                    <li><a href="#guia">Guía de validación</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Artículos</a></li>
+                </ul>
+            </div>
+            <div id="contacto">
+                <h4>Contacto</h4>
+                <p class="small">Formulario breve para instituciones, startups y profesionales.</p>
+                <!-- Formulario sin backend: conectar con Formspree/Netlify Forms -->
+                <form action="#" method="post">
+                    <label class="small" for="rol">Tu rol</label>
+                    <select id="rol" name="rol" required>
+                        <option value="">Seleccioná</option>
+                        <option>Institución</option>
+                        <option>Startup/I+D</option>
+                        <option>Profesional de la salud</option>
+                    </select>
+                    <label class="small" for="email">Email</label>
+                    <input id="email" name="email" type="email" required placeholder="tu@correo.com" />
+                    <label class="small" for="msg">Mensaje</label>
+                    <textarea id="msg" name="mensaje" rows="3"
+                        placeholder="Contanos brevemente tu necesidad"></textarea>
+                    <button class="cta" type="submit">Enviar</button>
+                </form>
+                <p class="note">Al enviar aceptás la política de privacidad y uso de datos.</p>
+            </div>
+        </div>
+        <div class="wrap" style="padding:10px 0;border-top:1px solid #1f2631;">
+            <p class="small">© <span id="y"></span> CANT · 100% online · Ética y datos primero</p>
+        </div>
+    </footer>
+
+    <script>
+        // Año dinámico
+        document.getElementById('y').textContent = new Date().getFullYear();
+        // TODO: Conectar enlaces de CTA a Calendly/Formspree/Plausible
+    </script>
+</body>
+
+</html>

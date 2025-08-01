@@ -1,0 +1,55 @@
+# SO / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.code-workspace
+
+# Node / build tools (por si en el futuro sumás tooling)
+node_modules/
+dist/
+build/
+.cache/
+.tmp/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Entornos
+.env
+.env.*.local
+
+# Imágenes generadas/optimizadas
+*.tmp.*
+*.orig.*
+
+# Zips/exports
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+
+# Archivos de diseño y binarios pesados (no versionar)
+*.pdf
+*.ai
+*.psd
+*.xd
+*.fig
+*.sketch
+*.indd
+*.pptx
+*.key
+*.mp4
+*.mov
+*.wav
+*.mp3
+
+# Sistemas estáticos opcionales
+public/
+.out/
+.next/
+.svelte-kit/
+astro/
