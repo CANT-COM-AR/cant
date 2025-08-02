@@ -34,6 +34,7 @@ pnpm-debug.log*
 
 # Archivos de diseño y binarios pesados (no versionar)
 *.pdf
+*.txt
 *.ai
 *.psd
 *.xd
