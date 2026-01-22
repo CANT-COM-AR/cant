@@ -195,6 +195,12 @@ section {
     margin-bottom: 48px;
 }
 
+.section-lead {
+    margin-top: 6px;
+    max-width: 780px;
+    color: var(--muted);
+}
+
 form {
     display: grid;
     gap: 12px;
