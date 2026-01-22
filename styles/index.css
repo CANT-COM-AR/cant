@@ -83,11 +83,12 @@ header {
 }
 
 .logo {
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 42px;
     border-radius: 10px;
-    background: linear-gradient(135deg, var(--accent), var(--peach));
-    box-shadow: 0 0 0 3px var(--accent-ink) inset;
+    object-fit: contain;
+    background: #fff;
+    box-shadow: 0 0 0 2px rgba(8, 52, 54, 0.2);
 }
 
 nav ul {
