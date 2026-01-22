@@ -272,15 +272,15 @@ textarea {
 
 .contact-grid {
     display: grid;
-    gap: 56px;
-    grid-template-columns: minmax(0, 440px) minmax(0, 520px);
+    gap: 64px;
+    grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
     align-items: start;
 }
 
 .calendar-panel {
     display: grid;
-    gap: 18px;
-    grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+    gap: 16px;
+    grid-template-columns: 1fr;
     align-items: start;
     background: var(--card);
     border: 1px solid #d4dde0;
@@ -288,12 +288,12 @@ textarea {
     padding: 18px;
     box-shadow: 0 10px 24px rgba(16, 59, 70, 0.08);
     width: 100%;
-    max-width: 520px;
 }
 
 .calendar-box {
     padding: 0;
     width: 100%;
+    max-width: 320px;
 }
 
 .calendar-header {
