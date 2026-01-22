@@ -280,7 +280,7 @@ textarea {
 .calendar-panel {
     display: grid;
     gap: 16px;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
     align-items: start;
     background: var(--card);
     border: 1px solid #d4dde0;
@@ -354,6 +354,8 @@ textarea {
     gap: 10px;
     font-size: 1.05rem;
     line-height: 1.6;
+    padding-left: 16px;
+    border-left: 1px solid #e2e8ea;
 }
 
 input:focus,
@@ -448,5 +450,10 @@ footer {
 
     .calendar-panel {
         grid-template-columns: 1fr;
+    }
+
+    .course-list {
+        padding-left: 0;
+        border-left: none;
     }
 }
