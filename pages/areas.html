@@ -23,7 +23,7 @@
                 <img class="logo" src="../assets/logo1-cant.png" alt="Logo de CANT" />
                 <h1>CANT <span class="small">· Centro Argentino de Neurodesarrollo y Tecnologías</span></h1>
             </div>
-            <nav aria-label="Principal">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>`r`n            <nav id="site-nav" aria-label="Principal">
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="areas.html" aria-current="page">Áreas de acción</a></li>
@@ -98,9 +98,42 @@
     </footer>
 
     <script>
-        document.getElementById('y').textContent = new Date().getFullYear();
+        document.getElementById('y').textContent = new Date().getFullYear();        (function () {
+            const toggle = document.querySelector('.nav-toggle');
+            if (!toggle) {
+                return;
+            }
+            const body = document.body;
+            const nav = document.getElementById('site-nav');
+
+            function closeMenu() {
+                body.classList.remove('nav-open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+
+            toggle.addEventListener('click', () => {
+                const isOpen = body.classList.toggle('nav-open');
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) {
+                    closeMenu();
+                }
+            });
+
+            if (nav) {
+                nav.addEventListener('click', (event) => {
+                    if (event.target && event.target.tagName === 'A') {
+                        closeMenu();
+                    }
+                });
+            }
+        })();
     </script>
 </body>
 
 </html>
+
+
 

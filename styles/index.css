@@ -108,6 +108,17 @@ nav a {
     white-space: nowrap;
 }
 
+.nav-toggle {
+    display: none;
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .cta {
     background: white;
     color: var(--accent);
@@ -455,5 +466,38 @@ footer {
     .course-list {
         padding-left: 0;
         border-left: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    body.nav-open nav ul {
+        display: flex;
+    }
+
+    nav a {
+        width: 100%;
+    }
+
+    .bar {
+        align-items: flex-start;
+        gap: 12px;
     }
 }
