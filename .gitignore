@@ -48,6 +48,9 @@ pnpm-debug.log*
 *.wav
 *.mp3
 
+# Permitir PDFs publicados en la web
+!assets/docs/*.pdf
+
 # Sistemas estáticos opcionales
 public/
 .out/
