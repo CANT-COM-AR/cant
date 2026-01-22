@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alianzas · CANT</title>
+    <meta name="description"
+        content="Soporte y validación tecnológica para diagnóstico, tratamiento y seguimiento de TND. Implementación en instituciones, formación y soporte continuo. 100% online." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/index.css" />
+</head>
+
+<body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+
+    <header role="banner">
+        <div class="wrap bar">
+            <div class="brand">
+                <img class="logo" src="../assets/logo1-cant.png" alt="Logo de CANT" />
+                <h1>CANT <span class="small">· Centro Argentino de Neurodesarrollo y Tecnologías</span></h1>
+            </div>
+            <nav aria-label="Principal">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="areas.html">Áreas de acción</a></li>
+                    <li><a href="como-trabajamos.html">Cómo trabajamos</a></li>
+                    <li><a href="etica.html">Ética y Datos</a></li>
+                    <li><a href="formacion.html">Formación</a></li>
+                    <li><a href="alianzas.html" aria-current="page">Alianzas</a></li>
+                    <li><a href="recursos.html">Recursos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido" class="wrap">
+        <section id="alianzas" aria-labelledby="alianzas-title">
+            <h2 id="alianzas-title">Alianzas</h2>
+            <p class="section-lead">Trabajamos con organizaciones que quieren implementar tecnología con impacto real en
+                neurodesarrollo.</p>
+            <div class="cards">
+                <div class="card">
+                    <div class="kicker">Instituciones</div>
+                    <h3>Hospitales y clínicas</h3>
+                    <p class="muted">Validaciones en entornos reales y protocolos de adopción.</p>
+                </div>
+                <div class="card">
+                    <div class="kicker">Innovación</div>
+                    <h3>Startups e I+D</h3>
+                    <p class="muted">Pruebas de concepto, evidencia clínica y métricas comparables.</p>
+                </div>
+                <div class="card">
+                    <div class="kicker">Academia</div>
+                    <h3>Universidades y ONGs</h3>
+                    <p class="muted">Investigación aplicada, publicaciones y formación continua.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="wrap foot">
+            <div>
+                <h4>CANT</h4>
+                <p class="small">Centro Argentino de Neurodesarrollo y Tecnologías. Hub online de soporte, validación,
+                    implementación, formación y soporte en TND.</p>
+            </div>
+            <div>
+                <h4>Mapa</h4>
+                <ul class="list">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="areas.html">Áreas de acción</a></li>
+                    <li><a href="como-trabajamos.html">Cómo trabajamos</a></li>
+                    <li><a href="etica.html">Ética y Datos</a></li>
+                    <li><a href="formacion.html">Formación</a></li>
+                    <li><a href="alianzas.html">Alianzas</a></li>
+                    <li><a href="recursos.html">Recursos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Recursos</h4>
+                <ul class="list">
+                    <li><a href="recursos.html">Recursos</a></li>
+                    <li><a href="../assets/docs/guia-validacion.pdf" download>Guía de validación</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap" style="padding:10px 0;border-top:1px solid #1f2631;">
+            <p class="small">© <span id="y"></span> CANT · <a href="https://www.cant.com.ar">www.cant.com.ar</a> · Ética y
+                datos primero</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
