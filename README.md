@@ -20,12 +20,14 @@ El objetivo es validar la **arquitectura, mensajes y marco institucional** aline
 
 ## Estructura
 
+```script
 / (raiz)
 ├─ index.html # Inicio
 ├─ /pages/ # Paginas tematicas
 ├─ /assets/ # Imagenes y docs publicos
 ├─ /styles/ # CSS del sitio
 └─ /js/ # Integraciones futuras (opcional)
+```
 
 ---
 
