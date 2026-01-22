@@ -199,6 +199,16 @@ form {
     gap: 12px;
     margin-top: 24px;
     max-width: 600px;
+    background: var(--card);
+    padding: 20px;
+    border-radius: var(--radius);
+    border: 1px solid #d4dde0;
+    box-shadow: 0 10px 24px rgba(16, 59, 70, 0.08);
+}
+
+label {
+    font-weight: 500;
+    color: var(--ink);
 }
 
 input,
@@ -208,7 +218,7 @@ textarea {
     padding: 10px 12px;
     font-size: 1rem;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #c3d0d4;
     background: white;
     color: var(--ink);
 }
@@ -217,9 +227,18 @@ textarea {
     resize: vertical;
 }
 
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid rgba(15, 143, 140, 0.25);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(15, 143, 140, 0.15);
+}
+
 button.cta {
     border: none;
     cursor: pointer;
+    width: fit-content;
 }
 
 footer {
