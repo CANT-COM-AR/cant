@@ -41,20 +41,38 @@
     <main id="contenido" class="wrap">
         <section id="contacto" aria-labelledby="contacto-title">
             <h2 id="contacto-title">Contacto</h2>
-            <form action="#" method="post">
-                <label for="rol">Tu rol</label>
-                <select id="rol" name="rol" required>
-                    <option value="">Seleccioná</option>
-                    <option>Institución</option>
-                    <option>Startup/I+D</option>
-                    <option>Profesional de la salud</option>
-                </select>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" required placeholder="tu@correo.com" />
-                <label for="msg">Mensaje</label>
-                <textarea id="msg" name="mensaje" rows="3" placeholder="Contanos brevemente tu necesidad"></textarea>
-                <button class="cta" type="submit">Enviar</button>
-            </form>
+            <div class="contact-grid">
+                <form action="#" method="post">
+                    <label for="rol">Tu rol</label>
+                    <select id="rol" name="rol" required>
+                        <option value="">Seleccioná</option>
+                        <option>Institución</option>
+                        <option>Startup/I+D</option>
+                        <option>Profesional de la salud</option>
+                    </select>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required placeholder="tu@correo.com" />
+                    <label for="msg">Mensaje</label>
+                    <textarea id="msg" name="mensaje" rows="4"
+                        placeholder="Contanos brevemente tu necesidad"></textarea>
+                    <button class="cta" type="submit">Enviar</button>
+                </form>
+                <aside class="calendar" aria-label="Calendario de formaciones">
+                    <div class="calendar-header">
+                        <div class="calendar-title" id="calendar-title">Calendario</div>
+                        <div class="calendar-nav">
+                            <button class="calendar-btn" type="button" id="cal-prev" aria-label="Mes anterior">◀</button>
+                            <button class="calendar-btn" type="button" id="cal-next" aria-label="Mes siguiente">▶</button>
+                        </div>
+                    </div>
+                    <div class="calendar-grid" id="calendar-grid"></div>
+                    <div class="course-list" aria-label="Cursos y talleres">
+                        <div><strong>10/11/2026:</strong> Taller de implementación clínica.</div>
+                        <div><strong>24/11/2026:</strong> Certificación en protocolos de validación.</div>
+                        <div><strong>05/12/2026:</strong> Mentoría para equipos institucionales.</div>
+                    </div>
+                </aside>
+            </div>
             <p class="note">Email: <a href="mailto:info@cant.com.ar">info@cant.com.ar</a></p>
         </section>
     </main>
@@ -68,7 +86,7 @@
             </div>
             <div>
                 <h4>Mapa</h4>
-                <ul class="list">
+                <ul class="list map-list">
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="areas.html">Áreas de acción</a></li>
                     <li><a href="como-trabajamos.html">Cómo trabajamos</a></li>
@@ -95,7 +113,60 @@
 
     <script>
         document.getElementById('y').textContent = new Date().getFullYear();
+        (function () {
+            const title = document.getElementById('calendar-title');
+            const grid = document.getElementById('calendar-grid');
+            const prev = document.getElementById('cal-prev');
+            const next = document.getElementById('cal-next');
+            const weekdays = ['Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa', 'Do'];
+            let current = new Date();
+
+            function renderCalendar(date) {
+                const year = date.getFullYear();
+                const month = date.getMonth();
+                const first = new Date(year, month, 1);
+                const last = new Date(year, month + 1, 0);
+                const startDay = (first.getDay() + 6) % 7;
+                const daysInMonth = last.getDate();
+
+                title.textContent = `${first.toLocaleString('es-AR', { month: 'long' })} ${year}`;
+                grid.innerHTML = '';
+
+                weekdays.forEach((day) => {
+                    const el = document.createElement('div');
+                    el.className = 'calendar-weekday';
+                    el.textContent = day;
+                    grid.appendChild(el);
+                });
+
+                for (let i = 0; i < startDay; i += 1) {
+                    const empty = document.createElement('div');
+                    empty.className = 'calendar-day is-muted';
+                    empty.textContent = '';
+                    grid.appendChild(empty);
+                }
+
+                for (let d = 1; d <= daysInMonth; d += 1) {
+                    const cell = document.createElement('div');
+                    cell.className = 'calendar-day';
+                    cell.textContent = d.toString();
+                    grid.appendChild(cell);
+                }
+            }
+
+            prev.addEventListener('click', () => {
+                current = new Date(current.getFullYear(), current.getMonth() - 1, 1);
+                renderCalendar(current);
+            });
+            next.addEventListener('click', () => {
+                current = new Date(current.getFullYear(), current.getMonth() + 1, 1);
+                renderCalendar(current);
+            });
+
+            renderCalendar(current);
+        })();
     </script>
 </body>
 
 </html>
+

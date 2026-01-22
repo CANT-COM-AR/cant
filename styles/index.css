@@ -181,6 +181,11 @@ main {
     padding: 16px;
 }
 
+.section-cta {
+    display: inline-block;
+    margin-top: 16px;
+}
+
 .kicker {
     font-size: 0.85rem;
     color: var(--accent);
@@ -234,9 +239,9 @@ form {
     display: grid;
     gap: 10px;
     margin-top: 24px;
-    max-width: 520px;
+    max-width: 440px;
     background: var(--card);
-    padding: 16px;
+    padding: 14px;
     border-radius: var(--radius);
     border: 1px solid #d4dde0;
     box-shadow: 0 10px 24px rgba(16, 59, 70, 0.08);
@@ -245,14 +250,15 @@ form {
 label {
     font-weight: 500;
     color: var(--ink);
+    font-size: 0.9rem;
 }
 
 input,
 select,
 textarea {
     width: 100%;
-    padding: 9px 12px;
-    font-size: 1rem;
+    padding: 8px 10px;
+    font-size: 0.95rem;
     border-radius: 8px;
     border: 1px solid #c3d0d4;
     background: white;
@@ -261,6 +267,81 @@ textarea {
 
 textarea {
     resize: vertical;
+    min-height: 120px;
+}
+
+.contact-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: minmax(0, 440px) minmax(0, 360px);
+    align-items: start;
+}
+
+.calendar {
+    background: var(--card);
+    border: 1px solid #d4dde0;
+    border-radius: var(--radius);
+    padding: 14px;
+    box-shadow: 0 10px 24px rgba(16, 59, 70, 0.08);
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.calendar-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.calendar-nav {
+    display: flex;
+    gap: 6px;
+}
+
+.calendar-btn {
+    border: 1px solid #c3d0d4;
+    background: #fff;
+    color: var(--ink);
+    border-radius: 8px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.calendar-weekday {
+    color: var(--muted);
+    font-weight: 600;
+    padding: 4px 0;
+}
+
+.calendar-day {
+    padding: 6px 0;
+    border-radius: 8px;
+    background: #f7fbfb;
+}
+
+.calendar-day.is-muted {
+    color: var(--muted);
+    background: #f1f5f6;
+}
+
+.course-list {
+    margin-top: 12px;
+    display: grid;
+    gap: 8px;
+    font-size: 0.9rem;
 }
 
 input:focus,
@@ -347,5 +428,9 @@ footer {
     .foot {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
 }
