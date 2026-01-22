@@ -293,7 +293,7 @@ textarea {
 .calendar-box {
     padding: 0;
     width: 100%;
-    max-width: 320px;
+    max-width: 200px;
 }
 
 .calendar-header {
@@ -305,7 +305,7 @@ textarea {
 
 .calendar-title {
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .calendar-nav {
@@ -318,27 +318,27 @@ textarea {
     background: #fff;
     color: var(--ink);
     border-radius: 8px;
-    padding: 3px 7px;
+    padding: 2px 6px;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 6px;
+    gap: 4px;
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
 }
 
 .calendar-weekday {
     color: var(--muted);
     font-weight: 600;
-    padding: 4px 0;
+    padding: 3px 0;
 }
 
 .calendar-day {
-    padding: 6px 0;
+    padding: 4px 0;
     border-radius: 8px;
     background: #f7fbfb;
 }
