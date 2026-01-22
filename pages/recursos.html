@@ -96,44 +96,14 @@
                 datos primero</p>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('y').textContent = new Date().getFullYear();        (function () {
-            const toggle = document.querySelector('.nav-toggle');
-            if (!toggle) {
-                return;
-            }
-            const body = document.body;
-            const nav = document.getElementById('site-nav');
-
-            function closeMenu() {
-                body.classList.remove('nav-open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-
-            toggle.addEventListener('click', () => {
-                const isOpen = body.classList.toggle('nav-open');
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 900) {
-                    closeMenu();
-                }
-            });
-
-            if (nav) {
-                nav.addEventListener('click', (event) => {
-                    if (event.target && event.target.tagName === 'A') {
-                        closeMenu();
-                    }
-                });
-            }
-        })();
-    </script>
+    <script src='../js/components/nav.js' defer></script>
+    <script src='../js/components/calendar.js' defer></script>
+    <script src='../js/components/year.js' defer></script>
+    <script src='../js/main.js' defer></script>
 </body>
 
 </html>
+
 
 
 

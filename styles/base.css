@@ -1,0 +1,42 @@
+:root {
+    --bg: #f6f7f4;
+    --card: #ffffff;
+    --ink: #103b46;
+    --muted: #5f6e73;
+    --accent: #0f8f8c;
+    --accent-ink: #083436;
+    --soft: #d9f0f1;
+    --peach: #7fc6d6;
+    --radius: 16px;
+    --max: 1160px;
+    --gap: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: Poppins, sans-serif;
+    margin-top: 0;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
